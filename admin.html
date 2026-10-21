@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Register - legislation.gov.uk</title>
+    <link rel="stylesheet" href="css/govuk-core.css">
+    <link rel="stylesheet" href="css/legislation.css">
+</head>
+<body>
+    <header class="govuk-header">
+        <div class="header-container">
+            <img src="images/header-logo.png" alt="Royal Crest" class="header-logo-img">
+            <a href="index.html" class="header-title">legislation.gov.uk</a>
+            <span class="tag">Administration Portal</span>
+        </div>
+    </header>
+
+    <nav class="govuk-nav">
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search Legislation</a>
+            <a href="primary.html">Primary Legislation</a>
+            <a href="secondary.html">Statutory Instruments</a>
+            <a href="admin.html" class="active">Manage Register</a>
+        </div>
+    </nav>
+
+    <main class="main-container layout-sidebar">
+        <!-- 1. Authentication Login Screen -->
+        <section id="loginSection" class="content-panel">
+            <h1>Parliamentary Login</h1>
+            <p>Access to the statutory drafting register is restricted to authorized officers (Prime Minister, Monarch, or Law Ministers).</p>
+
+            <form id="adminLoginForm" class="admin-form">
+                <label for="adminUser">Select Role / Official Title:</label>
+                <select id="adminUser" required>
+                    <option value="Prime Minister">Prime Minister</option>
+                    <option value="His Majesty The King">His Majesty The King</option>
+                    <option value="Lord Chancellor">Lord Chancellor</option>
+                    <option value="Speaker of the House">Speaker of the House</option>
+                </select>
+
+                <label for="adminPass">Passcode / Security Pin:</label>
+                <input type="password" id="adminPass" placeholder="Enter administrative passcode" required>
+
+                <button type="submit" class="govuk-button">Authenticate Session</button>
+            </form>
+        </section>
+
+        <!-- 2. Protected Enactment Screen (Hidden by Default) -->
+        <section id="enactSection" class="content-panel" style="display: none;">
+            <div class="user-session-bar">
+                <span>Logged in as: <strong id="activeRoleTitle">Prime Minister</strong></span>
+                <button class="logout-link" onclick="logoutAdmin()">Sign Out</button>
+            </div>
+
+            <h1>Enact New Statutory Provision</h1>
+            <p>Add new Acts of Parliament or Statutory Instruments to the official register.</p>
+
+            <form id="adminEnactForm" class="admin-form">
+                <label for="actCode">Number / Citation Code:</label>
+                <input type="text" id="actCode" placeholder="ukpga/2026/14" required>
+
+                <label for="actTitle">Title of Legislation:</label>
+                <input type="text" id="actTitle" placeholder="e.g. Highway Traffic Safety Act 2026" required>
+
+                <label for="actCategory">Classification:</label>
+                <select id="actCategory">
+                    <option value="Primary">Primary (UK Public General Acts)</option>
+                    <option value="Secondary">Secondary (UK Statutory Instruments)</option>
+                </select>
+
+                <label for="sectionTitle">Section Heading / Provision Title:</label>
+                <input type="text" id="sectionTitle" placeholder="Section 1 - Prohibition of Unsafe Vehicles" required>
+
+                <label for="actContent">Statutory Provision Text:</label>
+                <textarea id="actContent" rows="6" placeholder="Write full statutory text..." required></textarea>
+
+                <label for="enactmentYear">Year Enacted:</label>
+                <input type="number" id="enactmentYear" value="2026" required>
+
+                <button type="submit" class="govuk-button">Enact Provision Into Statute</button>
+            </form>
+        </section>
+
+        <aside class="side-panel">
+            <div class="admin-card">
+                <h2>Database Tools</h2>
+                <p class="small-text">Export register database or restore default Crown statutes.</p>
+                <button class="govuk-button secondary" onclick="exportDatabaseJSON()">Export JSON Register</button>
+                <button class="govuk-button warning" onclick="resetRegisterDefaults()">Reset Register Defaults</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="govuk-footer">
+        <div class="footer-container">
+            <p>Contains public sector information licensed under the Open Government Licence v3.0.</p>
+        </div>
+    </footer>
+
+    <script src="js/database.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>

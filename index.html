@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>legislation.gov.uk</title>
+    <link rel="stylesheet" href="css/govuk-core.css">
+    <link rel="stylesheet" href="css/legislation.css">
+</head>
+<body>
+    <header class="govuk-header">
+        <div class="header-container">
+            <img src="images/header-logo.png" alt="Royal Crest" class="header-logo-img">
+            <a href="index.html" class="header-title">legislation.gov.uk</a>
+            <span class="tag">Official Register</span>
+        </div>
+    </header>
+    <div class="govuk-phase-banner">
+        <div class="banner-container">
+            <span class="phase-tag">REPLICA</span>
+            <span>The official revised database of UK Statute Law and Statutory Instruments.</span>
+        </div>
+    </div>
+    <nav class="govuk-nav">
+        <div class="nav-container">
+            <a href="index.html" class="active">Home</a>
+            <a href="search.html">Search Legislation</a>
+            <a href="primary.html">Primary Legislation</a>
+            <a href="secondary.html">Statutory Instruments</a>
+            <a href="admin.html">Manage Register</a>
+        </div>
+    </nav>
+    <main class="main-container">
+        <div class="hero-banner">
+            <h1>Search UK Legislation</h1>
+            <p>Browse revised primary and secondary UK legislation enacted by Parliament.</p>
+            <form action="search.html" method="GET" class="hero-search-form">
+                <input type="text" name="q" placeholder="Enter title, year, or section (e.g. Road Traffic Act 1988)..." class="hero-search-input">
+                <button type="submit" class="govuk-button search-btn">Search</button>
+            </form>
+        </div>
+        <div class="three-column-grid">
+            <div class="grid-card">
+                <h2>Primary Legislation</h2>
+                <p>Public General Acts of the United Kingdom Parliament, Scottish Parliament, and Senedd Cymru.</p>
+                <a href="primary.html" class="govuk-link">Browse Primary Acts &rarr;</a>
+            </div>
+            <div class="grid-card">
+                <h2>Statutory Instruments</h2>
+                <p>Secondary orders, regulations, and rules made under powers conferred by Primary Acts.</p>
+                <a href="secondary.html" class="govuk-link">Browse Instruments &rarr;</a>
+            </div>
+            <div class="grid-card">
+                <h2>Enact & Amend</h2>
+                <p>Draft, publish, or repeal statutory provisions directly within the local register.</p>
+                <a href="admin.html" class="govuk-link">Open Register Portal &rarr;</a>
+            </div>
+        </div>
+        <section class="recent-acts-section">
+            <h2>Featured Statutes</h2>
+            <div id="featuredStatutesList"></div>
+        </section>
+    </main>
+    <footer class="govuk-footer">
+        <div class="footer-container">
+            <p>All content is available under the <strong>Open Government Licence v3.0</strong>, except where otherwise stated.</p>
+            <p class="small-footer">Contains public sector information licensed under the Open Government Licence v3.0.</p>
+        </div>
+    </footer>
+    <script src="js/database.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act Viewer - legislation.gov.uk</title>
+    <link rel="stylesheet" href="css/govuk-core.css">
+    <link rel="stylesheet" href="css/legislation.css">
+</head>
+<body>
+    <header class="govuk-header">
+        <div class="header-container">
+            <img src="images/header-logo.png" alt="Royal Crest" class="header-logo-img">
+            <a href="index.html" class="header-title">legislation.gov.uk</a>
+            <span class="tag">Statute Viewer</span>
+        </div>
+    </header>
+    <nav class="govuk-nav">
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search Legislation</a>
+            <a href="primary.html">Primary Legislation</a>
+            <a href="secondary.html">Statutory Instruments</a>
+            <a href="admin.html">Manage Register</a>
+        </div>
+    </nav>
+    <main class="main-container layout-sidebar">
+        <aside class="sidebar-filters">
+            <div class="timeline-box">
+                <h3>Point in Time Version</h3>
+                <p>Status: <strong class="in-force">Revised (In Force)</strong></p>
+                <p>Version Date: <span id="actEnactmentDate">2026</span></p>
+            </div>
+            <div class="toc-box">
+                <h3>Table of Contents</h3>
+                <ul id="actTocList" class="toc-list"></ul>
+            </div>
+        </aside>
+        <section class="document-reader">
+            <div class="act-header-block">
+                <span id="actNumberCode" class="meta-tag"></span>
+                <h1 id="actFullTitle">Select an Act to View</h1>
+                <p id="actMetaDescription" class="small-text"></p>
+            </div>
+            <article id="actFullTextContent" class="statutory-text-box"></article>
+        </section>
+    </main>
+    <footer class="govuk-footer">
+        <div class="footer-container">
+            <p>Contains public sector information licensed under the Open Government Licence v3.0.</p>
+        </div>
+    </footer>
+    <script src="js/database.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>

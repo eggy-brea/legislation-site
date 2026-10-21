@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - legislation.gov.uk</title>
+    <link rel="stylesheet" href="css/govuk-core.css">
+    <link rel="stylesheet" href="css/legislation.css">
+</head>
+<body>
+    <header class="govuk-header">
+        <div class="header-container">
+            <img src="images/header-logo.png" alt="Royal Crest" class="header-logo-img">
+            <a href="index.html" class="header-title">legislation.gov.uk</a>
+            <span class="tag">Search Portal</span>
+        </div>
+    </header>
+    <nav class="govuk-nav">
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="search.html" class="active">Search Legislation</a>
+            <a href="primary.html">Primary Legislation</a>
+            <a href="secondary.html">Statutory Instruments</a>
+            <a href="admin.html">Manage Register</a>
+        </div>
+    </nav>
+    <main class="main-container layout-sidebar">
+        <aside class="sidebar-filters">
+            <h2>Filter Results</h2>
+            <div class="filter-group">
+                <label>Type of Legislation:</label>
+                <select id="filterType" onchange="performSearch()">
+                    <option value="all">All Types</option>
+                    <option value="Primary">UK Public General Acts</option>
+                    <option value="Secondary">UK Statutory Instruments</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Keyword Search:</label>
+                <input type="text" id="pageSearchInput" onkeyup="performSearch()" placeholder="Type to filter...">
+            </div>
+        </aside>
+        <section class="results-area">
+            <h1>Legislation Search Results</h1>
+            <p id="searchSummaryText">Showing all provisions in register.</p>
+            <div id="searchResultsList" class="legislation-list"></div>
+        </section>
+    </main>
+    <footer class="govuk-footer">
+        <div class="footer-container">
+            <p>Contains public sector information licensed under the Open Government Licence v3.0.</p>
+        </div>
+    </footer>
+    <script src="js/database.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>
